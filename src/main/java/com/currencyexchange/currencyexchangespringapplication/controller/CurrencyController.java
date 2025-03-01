@@ -6,7 +6,6 @@ import com.currencyexchange.currencyexchangespringapplication.dto.CurrencyDto;
 import com.currencyexchange.currencyexchangespringapplication.dto.CurrencyUpdateRequest;
 import com.currencyexchange.currencyexchangespringapplication.service.CurrencyService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
