@@ -57,8 +57,8 @@ public class ExchangeRateController {
     public ResponseEntity<ExchangeResponseDto> exchange(
             @RequestParam String from,
             @RequestParam String to,
-            @RequestParam double amount
-    ) {
+            @RequestParam double amount) {
+
         ExchangeResponseDto result = exchangeRateService.exchange(from, to, amount);
         return ResponseEntity.ok(result);
     }

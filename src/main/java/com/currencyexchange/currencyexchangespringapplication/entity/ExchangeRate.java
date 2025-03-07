@@ -15,14 +15,14 @@ public class ExchangeRate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "base_currency_id")
-    private Currency baseCurrency;  // USD
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "base_currency_id", nullable = false)
+    private Currency baseCurrency;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "target_currency_id")
-    private Currency targetCurrency; // RUB
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "target_currency_id", nullable = false)
+    private Currency targetCurrency;
 
     @Column(nullable = false)
-    private Double rate; // Коэффициент, например 73.50
+    private Double rate;
 }

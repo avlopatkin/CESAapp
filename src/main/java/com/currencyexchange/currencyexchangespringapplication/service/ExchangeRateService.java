@@ -28,7 +28,7 @@ public class ExchangeRateService {
     }
 
     public ExchangeRateDto getExchangeRate(String currencyPair) {
-        String[] parsed = parseCurrencyPair(currencyPair); // base=USD, target=RUB
+        String[] parsed = parseCurrencyPair(currencyPair);
         String base = parsed[0];
         String target = parsed[1];
 
@@ -99,8 +99,8 @@ public class ExchangeRateService {
         return ExchangeRateDto.fromEntity(exchangeRate);
     }
 
+    @Transactional
     public ExchangeResponseDto exchange(String from, String to, double amount) {
-        // Ищем подходящий курс (direct / reverse / через USD)
         double rate = findRate(from, to);
 
         double converted = amount * rate;

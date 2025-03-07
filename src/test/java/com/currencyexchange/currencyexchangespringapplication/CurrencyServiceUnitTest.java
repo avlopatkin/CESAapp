@@ -47,9 +47,9 @@ class CurrencyServiceUnitTest {
 
     @Test
     public void testAddCurrencyAlreadyExists() {
-        CurrencyCreationRequest request = new CurrencyCreationRequest("GBP", "British Pound", "£");
+        CurrencyCreationRequest request = new CurrencyCreationRequest("GBP", "Sterling", "£");
 
-        Currency existingCurrency = new Currency("GBP", "British Pound", "£");
+        Currency existingCurrency = new Currency("GBP", "Sterling", "£");
         when(currencyRepository.findByCode("GBP")).thenReturn(Optional.of(existingCurrency));
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
